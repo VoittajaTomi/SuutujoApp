@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>SuutujoApp</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="SuutujoApp">
+        <div ng-controller="SetController">
+            <h1>Treeni päivä kirja</h1>
+            <h3>{{now_time}}</h3>
+            
+        
+            <div id="set-container">
+                
+                <div id="add-set-container">
+
+                    <input type="text"  ng-model="set_name" placeholder="liikken nimi">
+                    <input type="text"  ng-model="set_weight" placeholder="40">
+                    <input type="text"  ng-model="set_reps" placeholder="5">
+                    <input type="text"  ng-model="set_times" placeholder="3">
+                    <button ng-click="addSet()">Suutu jo</button>
+                </div>
+                
+                <div class="set">
+                   
+                    <table>
+                        
+                        <tr>
+                            <th>Liike</th>
+                            <th>Paino</th>
+                            <th>Sarjat</th>
+                            <th>Toistot</th>
+                            <th>Ajankohta</th>
+                        </tr>
+                        
+                        <tr ng-repeat="set in sets">
+                            
+                            <th>{{set.name}}</th>
+                            <th>{{set.weight}}</th>
+                            <th>{{set.times}}</th>
+                            <th>{{set.reps}}</th>
+                            <th>{{set.datetime}}</th>
+                            
+                            
+                        </tr>
+                        
+                    </table>
+                    
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+                
+        <script src="bower_components/moment/min/moment-with-locales.js"></script>
+        <script src="bower_components/moment/locale/fi.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>     
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+        <!--<script src="bower_components/angularfire/dist/angularfire.min.js"></script>-->
+        <script src="bower_components/firebase/firebase.js"></script>
+        
+        <script src="app/config.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/controllers/set_controller.js"></script>
+        <script src="app/services/firebase_service.js"></script>
+        
+
+    </body>
+</html>

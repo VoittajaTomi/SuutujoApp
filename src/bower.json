@@ -1,0 +1,21 @@
+{
+  "name": "SuutujoApp",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app/config.js"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angularfire": "~1.1.3",
+    "moment": "~2.10.6"
+  }
+}
