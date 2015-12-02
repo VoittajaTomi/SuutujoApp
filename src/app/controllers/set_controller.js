@@ -28,6 +28,13 @@ SuutujoApp.controller("SetController", function($scope, $timeout, FirebaseServic
         
         var set = { name: $scope.set_name, times: $scope.set_times, weight: parseInt($scope.set_weight), reps: parseInt($scope.set_reps), datetime: moment().unix(new Date()) }
         
+        // tyhjennä kentät
+        
+        $scope.set_name="";
+        $scope.set_weight="";
+        $scope.set_times="";
+        $scope.set_reps="";
+        
         FirebaseService.createSet(set);
         
     }
